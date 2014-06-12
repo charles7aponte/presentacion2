@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="icons/foundation-icons.css" />
+    <link rel='stylesheet' href='css/spectrum.css' />
+    <link href="css/overcast/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+    
+    <link rel="stylesheet" href="css/micss.css" />
+   
+  
+
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+  
+  
+  
+  
+  
+
+    <!-- panel  principal -->
+    <div class="row panel_principal" id="panel_principal_1">
+
+
+	
+		
+      <!-- class1-->
+      <div class="medium-12 large-12 columns">
+        
+        <!-- final 1 panel prinpla -->
+        <div class="row" id="fila_1panel" style="height:80px; background-color: #23A299;">
+          <div class="medium-3 large-3 columns" style="background-color: #008D83; height: 80px;">
+          </div>
+
+
+
+          <div class="medium-6 large-6 columns" style="height:50px">
+
+            <div id="botones_presentacion_p1"
+            style="position: absolute;
+            margin-top: 10px;
+            left: 0.5%;"
+            >
+              <div class="button active_button  has-tip"has-tip  id="boton_esecenario_1" style="background-color: #00ab26;font-size:45px" data-mipanel="panel_escenario"
+              data-tooltip  title="Escenarios"
+              >
+                  <!-- Escenarios -->
+              </div>
+               
+                <div style="background-color: #FFFFFF ;font-size: 50px;" data-mipanel="panel_personajes"
+                 data-tooltip class="has-tip  button" title="Personajes" 
+                >
+                  <!-- personajes -->
+                </div>
+
+                 <div class="button  has-tip" style="background-color: #FFFFFF;font-size: 45px;" data-mipanel="panel_texto"
+                data-tooltip  title="Texto"
+                 >
+                  <!--Texto-->
+                </div>
+
+                
+                
+                 <div class="button  has-tip" style="background-color: #FFFFFF; font-size:45px" data-mipanel="panel_imagenes"
+                data-tooltip  title="Imagenes"
+                 >
+                  <!--Imagenes -->
+                </div>
+                
+
+                 <div class="button   has-tip" style="background-color: #FFFFFF; font-size:45px;" data-mipanel="panel_marcos"
+                data-tooltip  title="Marcos"
+                 >
+                  <!-- Marcos-->
+                </div>
+            </div>
+          </div>  
+            
+            
+          <div class="medium-3 large-3 columns">
+             <ul  id="botones_principales" class="button-group [radius round]" style="margin-top:12px"> 
+              
+            <!--
+              <li>
+                <a  class="main icon2 " title="abrir" alt="abrir">
+                   <i class="mi_icons fi-folder size-60"></i>
+                </a>
+              </li> 
+-->
+              <li>
+                <a  class="main icon2 " id="bton_guardar"  title="guardar" alt="guardar">
+                   <i class="mi_icons step "></i>
+                </a>
+              </li>
+
+              <li onclick="manejadorPaginas.inicioPresentacion()">
+                <a  class=" main icon2 " id="ver_presentacion" title="presentacion" alt="presentacion" onclick="return false">
+                   <i class="mi_icons "></i>
+                </a>
+              </li>
+
+               
+            </ul>            
+          </div> 
+
+        </div><!-- finla final 1 panel prinpla -->
+        
+        <!-- final 2 panel prinpla -->
+        <div class="row">
+        
+        </div><!-- fin final 2 panel prinpla -->
+
+     </div><!-- class 1 -->
+      
+    </div>
+    <!-- fin del panel principa -->
+    
+
+    <div class="row " style="background:#E0FFE4" >
+
+      <!-- menu de componentes -->
+      <div class="medium-3 large-3 columns menu1 " id="menu_lateral_1" style="overflow-x: auto; overflow-y:hidden ; height: 510px;" >
+        <h2 style="opacity: 0">Elementos</h2>
+          <div class="row" >
+            
+
+              <div class="large-12 columns" >
+
+            <!-- panel escenario -->
+               <div class="row" data-seccion="panel_escenario">
+
+                  <div style="width: 100% ;">                    
+                    <label  class="label_estado_personaje" >Fondo Color</label>
+                    <input type="text" id="color_escenario">
+                   </div> 
+
+                  <div style="width: 100% ; height: 300px ; margin-top:10px ; overflow: auto"
+                  id="panel_escenario_contenido">                    
+                    <label  class="label_estado_personaje" >Fondo Imagen</label>
+                    <table style="width: 99%">
+                       <tbody id="imagenes_fondo1" style="width: 99%">
+                        </tbody>
+                    </table>
+                   </div> 
+               </div> <!-- fin  panel escenario -->
+
+
+
+
+
+               <!-- panel escenario -->
+               <div class="row" data-seccion="panel_imagenes">
+
+                  <div style="width: 100% ;">                    
+                    <label  class="label_estado_personaje" >Nueva Imagen</label>
+                    <a class=" [tiny small medium ] [radius round] button" href="#"  onclick="return false;" 
+                     id="bton_imagene_externa">Agregar</a>
+                   </div> 
+
+                  <div style="width: 100% ; height: 300px ; margin-top:10px ; overflow: auto"
+                  id="panel_imagenes_contenido">                    
+                    <label  class="label_estado_personaje" >Imagenes</label>
+                    <table style="width: 99%">
+                       <tbody id="panel_imagenes_contenido_table1" style="width: 99%">
+                        </tbody>
+                    </table>
+                   </div> 
+
+               </div> <!-- fin  panel escenario -->
+
+
+                <!-- panel marcos -->
+               <div class="row" data-seccion="panel_marcos"> 
+
+                  <div id="panel_marcos_contenido" style="width: 100% ; height: 300px ; margin-top:10px ; overflow-y: auto">                    
+                    <label  class="label_estado_personaje" >Marcos</label>
+                    <table style="width: 100%">
+                       <tbody id="imagenes_marcos">
+                        </tbody>
+                    </table>
+                   </div> 
+               </div> <!-- fin  panel escenario -->
+
+
+
+
+               
+               <!-- personajes -->
+               <div class="row" data-seccion="panel_personajes">
+
+                 <div  style="width:120px; height:120px;  margin:10px auto;" class="flexslider radios-personajes"                  
+                 >
+                    <ul class="slides">
+                     <li data-personaje="p1" >
+                        <label  class="nombre_personaje" >Juan</label> 
+                        <img src="img/personajes/p1/c1.png" class="radios-personajes" />
+                      </li>
+                    
+                      <li data-personaje="p2">
+                          <label  class="nombre_personaje" >Enrique</label>
+                        <img src="img/personajes/p2/c1.png"  class="radios-personajes" />
+                       
+                      </li>
+
+                      <li data-personaje="p3">
+                         <label  class="nombre_personaje" >Maria</label>
+                        <img src="img/personajes/p3/c1.png"  class="radios-personajes"/>                        
+                      </li>
+
+                       <li data-personaje="p4">
+                         <label  class="nombre_personaje" >Madara</label>
+                        <img src="img/personajes/p4/c1.png"  class="radios-personajes"/>                  
+                      </li>
+                    </ul>                  
+                  </div><!--- eleccion de personaje-->
+               
+                 <div style="width:100%; 
+                            height: 270px;
+                            overflow-y: auto;
+                            margin-top: 40px;
+                            overflow-x: hidden"
+
+                  id="panel_personajes_contenido"
+                            > 
+                  <table style="width:99%">
+                   
+                    <tbody>
+                      <!-- persona 1 -->
+                      <tr data-filapersonaje="p1" >
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p1/c1.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+                           data-imagen='img/personajes/p1/cuerpo1.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p1/cuerpo1.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                         </div>
+                         <label class="label_estado_personaje">FELIZ</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p1/c2.png); " 
+                           data-elemento="<div   data-tipo='tipo1'
+
+                          data-imagen='img/personajes/p1/cuerpo2.png' 
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p1/cuerpo2.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">TRISTE</label>
+                        </th>
+                      </tr>
+
+                       <tr data-filapersonaje="p1">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p1/c3.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p1/cuerpo3.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p1/cuerpo3.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                         </div>
+                          <label class="label_estado_personaje">PENSATIVO</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p1/c4.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                            data-imagen='img/personajes/p1/cuerpo4.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p1/cuerpo4.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                            </div>
+                            <label class="label_estado_personaje">ASUSTADO</label>
+                           </th>
+                        </tr>  
+
+                      <tr data-filapersonaje="p1">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p1/c5.png); " 
+                           data-elemento="<div   data-tipo='tipo1'
+
+                            data-imagen='img/personajes/p1/cuerpo5.png' 
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p1/cuerpo5.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">DESAFIANTE</label>
+                         </th>
+                        
+                        <th>
+                        </th>
+                      </tr><!-- fin de personaje 1-->
+                      
+
+                      <!-- persona 2 -->
+                      <tr data-filapersonaje="p2" >
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url('img/personajes/p2/c1.png'); " 
+                           data-elemento="<div   data-tipo='tipo1'
+
+                          data-imagen='img/personajes/p2/cuerpo1.png' 
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p2/cuerpo1.png);  background-size: 100%; height:150px ; width:100px'  ></div>">
+                         </div>
+                         <label class="label_estado_personaje">FELIZ</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p2/c2.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                          data-imagen='img/personajes/p2/cuerpo2.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p2/cuerpo2.png);  background-size: 100%; height:150px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">TRISTE</label>
+                        </th>
+                      </tr>
+
+                       <tr data-filapersonaje="p2">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p2/c3.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p2/cuerpo3.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p2/cuerpo3.png);  background-size: 100%; height:150px ; width:100px'  ></div>">
+                         </div>
+                          <label class="label_estado_personaje">PENSATIVO</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p2/c4.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p2/cuerpo4.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p2/cuerpo4.png);  background-size: 100%; height:150px ; width:100px'  ></div>">
+                            </div>
+                            <label class="label_estado_personaje">ASUSTADO</label>
+                           </th>
+                        </tr>  
+
+                      <tr data-filapersonaje="p2">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p2/c5.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p2/cuerpo5.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p2/cuerpo5.png);  background-size: 100%; height:150px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">DESAFIANTE</label>
+                         </th>
+                        
+                        <th>
+                        </th>
+                      </tr><!-- fin de personaje 2-->
+
+
+                      <!-- persona 3 -->
+                      <tr data-filapersonaje="p3" >
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p3/c1.png); " 
+                           data-elemento="<div   data-tipo='tipo1'
+
+                           data-imagen='img/personajes/p3/cuerpo1.png' 
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p3/cuerpo1.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                         </div>
+                         <label class="label_estado_personaje">FELIZ</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p3/c2.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+
+                           data-imagen='img/personajes/p3/cuerpo2.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p3/cuerpo2.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">TRISTE</label>
+                        </th>
+                      </tr>
+
+                       <tr data-filapersonaje="p3">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p3/c3.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+
+                           data-imagen='img/personajes/p3/cuerpo3.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p3/cuerpo3.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                         </div>
+                          <label class="label_estado_personaje">PENSATIVO</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p3/c4.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+
+                           data-imagen='img/personajes/p3/cuerpo4.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p3/cuerpo4.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                            </div>
+                            <label class="label_estado_personaje">ASUSTADO</label>
+                           </th>
+                        </tr>  
+
+                      <tr data-filapersonaje="p3">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p3/c5.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                          data-imagen='img/personajes/p3/cuerpo5.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p3/cuerpo5.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">DESAFIANTE</label>
+                         </th>
+                        
+                        <th>
+                        </th>
+                      </tr><!-- fin de personaje 3-->
+
+
+                      <!-- persona 4 -->
+                      <tr data-filapersonaje="p4" >
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p4/c1.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+
+                           data-imagen='img/personajes/p4/cuerpo1.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p4/cuerpo1.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                         </div>
+                         <label class="label_estado_personaje">FELIZ</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p4/c2.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p4/cuerpo2.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p4/cuerpo2.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">TRISTE</label>
+                        </th>
+                      </tr>
+
+                       <tr data-filapersonaje="p4">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p4/c3.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p4/cuerpo3.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p4/cuerpo3.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                         </div>
+                          <label class="label_estado_personaje">PENSATIVO</label>
+                        </th>
+                        
+                        <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p4/c4.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p4/cuerpo4.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p4/cuerpo4.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                            </div>
+                            <label class="label_estado_personaje">ASUSTADO</label>
+                           </th>
+                        </tr>  
+
+                      <tr data-filapersonaje="p4">
+                          <th>
+                          <div class="elemento_menu1 imagen_fondo"
+                           style="background-image: url(img/personajes/p4/c5.png); " 
+                           data-elemento="<div   data-tipo='tipo1' 
+
+                           data-imagen='img/personajes/p4/cuerpo5.png'
+                          class='imagen_fondo'
+                          style='background:url(img/personajes/p4/cuerpo5.png);  background-size: 100%; height:200px ; width:100px'  ></div>">
+                          </div>
+                          <label class="label_estado_personaje">DESAFIANTE</label>
+                         </th>
+                        
+                        <th>
+                        </th>
+                      </tr><!-- fin de personaje 4 -->
+
+                    </tbody>
+                  </table>
+                </div><!-- fin de di  de personajes -->
+
+              </div><!-- .row contenedor de todos los PERSONAJES -->
+
+
+
+               <!--  panel de texto -->   
+              <div class="row"  style=" height: 90px;
+                background: #F8F9D9;" data-seccion="panel_texto">
+
+
+                <div  style="width:80px; height:80px;  border: 2px dashed #6F636F; margin:10px auto; font-size: 22px;
+                    color: #080B57;line-height: 70px;" 
+                  
+
+                    >
+                  <div class="elemento_menu1" data-elemento="<div  data-tipo='textarea' style='height:100px ; width:100px;font-size: 22px;
+                        color: #080B57;'  >
+
+                            <div style='overflow:hidden; height:100% ; width:100%;'> <textarea  class='text '   
+                              style='font-size: 22px; color: #080B57;box-shadow: none;'
+                                  onblur='noeditarBlur(this)' >Texto</textarea></div>
+                            
+                            <div  class='sombra' ondblclick='editarTexto(this)'></div></div>">
+                            Texto
+                  </div>
+                </div>
+
+                <div  id="panel_texto_contenido" style="width:100%; height:300px; overflow:auto;">  
+                   <table style="width:100%">
+                      <tbody id="cuerpo_bocadillo">
+                       
+                      </tbody>
+                  </table>
+                  </div>
+              </div><!-- fin  panel de texto --> 
+
+          </div><!-- fin classe columns 12  -->
+
+        </div><!-- ROW -->
+
+      </div><!--   fin del componente menu 1 class medium-3 -->
+
+
+      <!-- CONTENDOR DE PAGINA ACTUAL -->
+      <div  id="contenedor_paginas" class="medium-9 large-9 columns contenedor_principal" style="position: relative;" >
+
+
+      <div  id="sombra_contenedor_paginas"  style="display: none">
+      </div>
+
+      <div class="button-bar presentacion_botones" id="grupos_btones_presentacion" style="display:none">
+        <ul class="button-group">
+
+
+           <li  id="bton_cierrre_presentacion" onclick="manejadorPaginas.finPresentacion()">
+            <a href="#"  onclick="return false"  class="small button fi-
+            s-in " style="padding: 2px 10px 5px 10px ; font-size: 20px">
+              </a>
+          </li>
+
+         
+          <li  onclick="manejadorPaginas.anteriorPaginaAnimada(); manejadorPaginas.banderaPlay=false;">
+            <a href="#"  onclick="return false" id="bton_presentacion_anterio" class="small button fi-arrow-left boton_representacion">
+              </a>
+          </li>
+
+           <li onclick="manejadorPaginas.inicioPlay()" >
+            <a href="#"  onclick="return false;"  id="bton_presentacion_medio"  class="small button fi-play  " 
+              style="padding: 10px 20px 10px 20px ;  font-size: 35px; margin-bottom: 1px">
+            </a>
+            <label id="contador_manejo_paginas" style="text-align: center;background-color:#D1D3CB"></label>
+          </li>
+          
+          <li   onclick="manejadorPaginas.siguientePaginaAnimada(); manejadorPaginas.banderaPlay=false;">
+            <a href="#"  onclick="return false;" id="bton_presentacion_siguiente"   class="small button fi-arrow-right boton_representacion">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+        <h1></h1>
+
+        <!-- herramienta -->
+           <ul id="herramientas_grupo_botones" class=" button-group [radius round]" style="height: 40px">               
+              <li>
+                
+                <div id="panel_editar_letras"  style="display:none" class="panel callout radius panel_grupo_botones">
+                 
+                 <table style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th width="10"></th>
+                      <th width="70"></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Color</td>
+                      <td><input type="text" id="panel_tipo_color" ></td>
+                    
+                    </tr>
+
+                    <tr>
+                      <td>Tamaño</td>
+                      <td><input type="text" readonly id="spinner" style="font-size:14px; padding:0px; margin:0px ; height:22px"></td>
+                    </tr>
+
+                    <tr>
+                      <td>font</td>
+                      <td><select style="padding: 0;" name="" id="panel_tipo_letra">
+                        <option value="mi_comic_san">comic san</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="mi_HORNSWOG">hornswog</option>
+                        <option value="mi_Kalocsai_Flowers">Kalocsai Flowers</option>
+                         <option value="mi_KaushanScript-Regular">KaushanScript Regular</option>
+
+                         <option value="monospace">monospace</option>
+                         <option value="san-serif">san-serif</option>
+                      </select></td>
+                    </tr>
+
+                    <tr>
+                      <td>style</td>
+                      <td>
+                        <table style="width: 100%">
+                          <tr>
+                            <td><p class="fi-bold letras_alineacion"  id="panel_letras_bold" data-propiedad="font-weight" data-descativo="none" data-activo="bold"></p></td>
+                            <td><p class="fi-italic letras_alineacion"  id="panel_letras_cursiva" data-propiedad="font-style" data-descativo="none" data-activo="italic"></p></td>
+                            <td><p class="fi-underline letras_alineacion"  id="panel_letras_subrayado" data-propiedad="text-decoration" data-descativo="none" data-activo="underline"></p></td>
+                          </tr>
+
+                          <tr>
+                            <td><p class="fi-align-center letras_alineacion"  id="panel_letras_center" data-propiedad="text-align"  data-activo="center" ></p></td>
+
+                            <td><p class="fi-align-left letras_alineacion"  id="panel_letras_left" data-propiedad="text-align" data-descativo="none" data-activo="left" ></p></td>
+
+                            <td ><p class="fi-align-right letras_alineacion"  id="panel_letras_right" data-propiedad="text-align" data-descativo="none" data-activo="right"></p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+              </li>
+
+
+              <li>
+                <a id="boton_color_grupo"   style="display:none"  class=" icon2  mi_h1_" title="editar letra" alt="editar letra">
+                </a>                
+              </li>
+
+              <li>
+                <a id="boton_capa" class=" icon2  mi_h2_" title="capas" alt="capas">
+                  
+                </a>
+                  
+                  <ul id="subgrupo_botones_boton_capa" class="button-group [radius round]" style="width:40px"> 
+                      <li>
+                        <a id="subgrupo_botones_boton_capa1"  onclick="elegirCapa(1)" class="icon2 sub_boton" title="1" alt="1">
+                           <i class="mi_icons2">1</i>
+                        </a>
+                      </li> 
+ 
+                      <li>
+                        <a id="subgrupo_botones_boton_capa2"  onclick="elegirCapa(2)" class=" icon2 sub_boton" title="2" alt="2">
+                           <i class="mi_icons2 ">2</i>
+                        </a>
+                      </li> 
+
+                      <li>
+                        <a id="subgrupo_botones_boton_capa3" onclick="elegirCapa(3)" class=" icon2 sub_boton" title="3" alt="3">
+                           <i class="mi_icons2 ">3</i>
+                        </a>
+                      </li> 
+                  </ul>
+              </li> 
+
+
+              <li>
+                <a id="boton_delete_grupo"    class=" icon2   mi_h3_" title="eliminar" alt="eliminar">
+                  
+                </a>
+              </li> 
+
+              
+
+              <li>
+                <a id="herramientas_grupo" class=" main icon2  mi_h4_ "  style="curso:move" title="" alt="">
+                 
+                </a>
+              </li> 
+          </ul>
+          <!--fin  herramienta -->
+            
+
+
+        <div class="pagina" id="pagina0" data-marco="none" data-fondo="none" data-animacion="fade">
+          <div  class="marco" ></div>
+          
+        </div><!-- fin de .paigna--> 
+      </div>
+
+    </div><!-- seccion edicion de contendio -->
+
+    
+
+    <!-- menu 2 de paginas -->
+    <div class="row mi_footer" id="mi_footer_paginacion">
+      <div class="large-12 columns "> 
+        <!-- borde menu2 pagina  -->
+        <div class="row pag_borde">
+
+        </div>
+
+        <!-- efectos -->  
+        <div class="row pag_transicion" style="display: none">
+
+          <ul class="mi_lista" style="" id="lista_transicion_presentacion">
+            
+            <li>
+              <label class="label_transicion" for="">fade</label>
+              
+              <div   class="th th_activo"  data-animacion="fade" 
+              onclick="seleccionarTransicion(this)">
+                <img class="mi_lista_imagen"  src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'fade')">
+              </div>
+
+      
+            </li>
+            
+            <li  >
+              <label class="label_transicion" for="">blind</label>
+              <div class="th" data-animacion="blind"
+               onclick="seleccionarTransicion(this)" >
+                <img class="mi_lista_imagen" src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'blind')">                 
+              </div>
+            </li>
+
+
+             <li  >
+               <label class="label_transicion" for="">bounce</label>
+             
+              <div class="th" data-animacion="bounce"
+               onclick="seleccionarTransicion(this)" >
+                <img class="mi_lista_imagen" src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'bounce')">                 
+              </div>
+            </li>
+
+
+            <li  >
+
+               <label class="label_transicion" for="">clip</label>
+             
+              <div class="th" data-animacion="clip"
+               onclick="seleccionarTransicion(this)" >
+                <img class="mi_lista_imagen" src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'clip')">                 
+              </div>
+            </li>
+
+
+            <li  >
+               <label class="label_transicion" for="">drop</label>
+             
+              <div class="th" data-animacion="drop"
+               onclick="seleccionarTransicion(this)" >
+                <img class="mi_lista_imagen" src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'drop')">                 
+              </div>
+            </li>
+
+
+
+            <li  >
+              <label class="label_transicion" for="">explode</label>
+          
+              <div class="th" data-animacion="explode"
+               onclick="seleccionarTransicion(this)" >
+                <img class="mi_lista_imagen" src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'explode')">                 
+              </div>
+            </li>
+
+
+            <li  >
+               <label class="label_transicion" for="">fold</label>
+             
+              <div class="th" data-animacion="fold"
+               onclick="seleccionarTransicion(this)" >
+                <img class="mi_lista_imagen" src="img/transicion/t1.png" onmouseover=" verTranscionDemo(this,'fold')">                 
+              </div>
+            </li>
+
+          </ul>
+          
+        </div>
+        
+
+        <!-- paginacion y nueva pagina -->
+        <div class="row pag_pag" style=" padding:0px">
+          
+          <div class="medium-3 large-3 columns" id="grupo_botones_transicion" style=" padding:0px; height: 100%; background-color:rgba(252, 236, 42, 0.76)"> 
+              <ul class="pagination" style="margin-top: 2px;
+                    margin-left: 5px;">
+                <li class="current has-tip tip-top  " title="effect" data-tooltip >
+                  <a href="" id="bton_pag_transicion" class="botones_efectos_paginas  step  mi_p1" onclick="return false " 
+
+                  style="background:none; 
+                   "
+                
+             
+                 ></a></li>
+
+                
+                 <li class="current has-tip tip-top" title="delete" data-tooltip>
+                  <a href=""   id="bton_pag_eliminar" class="botones_efectos_paginas step mi_p2 size-21 " onclick="return false " ></a></li>
+
+                  <li class="current has-tip tip-top" title="add" data-tooltip >
+                  <a href=""   id="bton_pag_nueva" class="botones_efectos_paginas step mi_p3" onclick="return false " ></a></li>
+
+            </ul>
+          </div>
+
+          <div class="medium-9 large-9 columns" style=" padding:0px; height: 100%; background-color:#FFC737">      
+             <ul class="pagination" id="html_mi_paginacion_paginas">
+             
+            </ul>
+          </div>
+          
+        </div>
+
+
+      </div>
+
+      
+
+
+
+
+    </div>
+
+
+
+
+    
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+      <script src='js/spectrum.js'></script>
+      <script src="js/flexslider.js"></script>
+  
+   
+    <script>
+      $(document).foundation();
+    
+      var miFlex= $('.flexslider').flexslider({
+          itemWidth:'20px'
+          ,animation: "fade"
+          ,slideshow:false
+          
+
+          ,after:function(){
+           
+            actualizaEstadosPersonajes();
+
+            
+          }        
+       });
+
+      setTimeout(function(){
+        actualizaEstadosPersonajes();
+      },700);
+    </script>
+<script src="js/interfaz.js"></script>
+<script src="js/imagenes.js"></script>
+   
+     <script src="js/paginas.js"></script>
+   
+     
+    <script src="js/miJs.js"></script>
+    <script src="cargar_datos.js"></script>
+  </body>
+</html>
+
