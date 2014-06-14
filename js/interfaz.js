@@ -218,7 +218,7 @@ function generarHmtlFondos(cantidadFila, cantidad){
 	return html;
 }
 
-$("#imagenes_fondo1").html(generarHmtlFondos(2,10));
+$("#imagenes_fondo1").html(generarHmtlFondos(2,5));
 
 
 
@@ -270,7 +270,7 @@ function generarHmtlMarcos(cantidadFila, cantidad){
 }
 
 
-$("#imagenes_marcos").html(generarHmtlMarcos(2,12));
+$("#imagenes_marcos").html(generarHmtlMarcos(2,4));
 
 
 

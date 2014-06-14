@@ -18,7 +18,7 @@ function Pagina(){
 			,intervaloPlay:null
 		    , banderaPlay:false
 		    ,fondoOriginal: $("#contenedor_paginas").css("background")//guadar el color de fondo inicias
-		   ,fondoPresentacion:"rgba(24, 50, 41, 0.5)"//color de fondo en ele momento de la presentcion
+		   ,fondoPresentacion:"rgba(0, 0, 0, 0.5)"//color de fondo en ele momento de la presentcion
 		    ,banderaPasandoPagina:false // false si no esta en proceso de transicion depasar una pagina con animacion , y ture si 
 		    ,banderaHabilitaEdicion:true
 		    ,contadorMilise:10
@@ -68,27 +68,45 @@ function Pagina(){
 			,htmlPaginado:function()
 			{
 
-				var html=" <li class='arrow_1 unavailable'></li> ";
+				var $html=$(" <li class='arrow_1 unavailable'></li> ");
+				var selft=this;
+
+				this.$htmlPaginado.html("");
+				this.$htmlPaginado.append($html);
 
 				for(var i=0; i< this.paginas.length ; i++)
 					{
 
 						if(this.paginas[i]==this.$paginaActual[0])
 						{
-							html+="<li class='current'><a href='' onclick='return false ' >"+(i+1)+"</a></li>";		
+							$html= $("<li class='current' data-posicion='"+-1+"'><a href='' onclick='return false ' >"+(i+1)+"</a></li>");		
 						}
 						else{
-							html+="<li><a  onclick='manejadorPaginas.seleccionarPagina("+i+")' >"+(i+1)+"</a></li>";
+							$html= $("<li data-posicion='"+i+"'><a  >"+(i+1)+"</a></li>");
 						}
+
+						
+						$html.click(function(){
+							var pos=$(this).data("posicion");
+							if(pos>=0){
+							
+								selft.seleccionarPagina(pos);	
+							}
+							
+						});
+
+						this.$htmlPaginado.append($html);
+
 					}
 
-				html+="<li class='arrow_2'></li>";
+				$html= $("<li class='arrow_2'></li>");
 
-				this.$htmlPaginado.html(html);
+				this.$htmlPaginado.append($html);
+				
 
 				this.actualizaPanelTransiciones();
 
-				return html;
+				return "";
 			}
 
 
@@ -344,14 +362,14 @@ function Pagina(){
 
 		  	if(this.banderaPlay)
 		  	{
-		  		$("#bton_presentacion_medio").removeClass("fi-play");
-		  		$("#bton_presentacion_medio").addClass("fi-pause");
+		  		$("#bton_presentacion_medio").removeClass("mi_play");
+		  		$("#bton_presentacion_medio").addClass("mi_pause");
 		  		$("#contador_manejo_paginas").html(this.contadorMilise);
 		  				  		
 		  	}
 		  	else{
-		  		$("#bton_presentacion_medio").addClass("fi-play");
-		  		$("#bton_presentacion_medio").removeClass("fi-pause");
+		  		$("#bton_presentacion_medio").addClass("mi_play");
+		  		$("#bton_presentacion_medio").removeClass("mi_pause");
 		  		$("#contador_manejo_paginas").html("");
 		  	}
 
