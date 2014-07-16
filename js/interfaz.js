@@ -218,7 +218,7 @@ function generarHmtlFondos(cantidadFila, cantidad){
 	return html;
 }
 
-$("#imagenes_fondo1").html(generarHmtlFondos(2,5));
+$("#imagenes_fondo1").html(generarHmtlFondos(2,9));
 
 
 

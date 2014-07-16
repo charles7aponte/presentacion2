@@ -58,6 +58,41 @@
 
 
 
+@font-face {
+  font-family: "mi_comic_book";
+  src: url("fuentes/comic_book.woff") format("woff"),
+       url("fuentes/comic_book.ttf") format("truetype"),
+       url("fuentes/comic_book.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: "mi_jack_story_regular";
+  src: url("fuentes/jack_story_regular.woff") format("woff"),
+       url("fuentes/jack_story_regular.ttf") format("truetype"),
+       url("fuentes/jack_story_regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: "mi_futura_heavy_bt";
+  src: url("fuentes/futura_heavy_bt.woff") format("woff"),
+       url("fuentes/futura_heavy_bt.ttf") format("truetype"),
+       url("fuentes/futura_heavy_bt.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 .fi-address-book:before,
 .fi-alert:before,
 .fi-align-center:before,

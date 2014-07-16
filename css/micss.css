@@ -1084,3 +1084,9 @@ background-color:#cccccc;
 	background-image: url('../img/icon/bton2.png')!important;
 	background-repeat: no-repeat no-repeat;
 }
+
+
+/****** alteracion   ************/
+.flex-control-nav{
+	bottom: -55px;
+}
